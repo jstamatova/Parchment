@@ -286,7 +286,8 @@ final class PageViewManager {
         let newPreviousViewController = dataSource?.viewControllerBefore(viewController)
         let newNextViewController = dataSource?.viewControllerAfter(viewController)
 
-        if let oldSelectedViewController = oldSelectedViewController {
+        if let oldSelectedViewController = oldSelectedViewController,
+           oldSelectedViewController != viewController {
             beginAppearanceTransition(false, for: oldSelectedViewController, animated: animated)
         }
 
